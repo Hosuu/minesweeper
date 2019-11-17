@@ -1,5 +1,7 @@
 import { fields, gameOver, winCheck } from './game.js'
 import { settings } from './settings.js'
+import { updateUiBombs } from './ui.js'
+import { config } from './config.js'
 
 export default class Field {
     constructor(x, y, htmlElement) {
@@ -26,7 +28,7 @@ export default class Field {
     }
 
     NormalClick() {
-        if (!settings.swapControls)
+        if (!config.swapControls)
             this.reveal()
         else if (this.revealed)
             this.flagedReveal()
@@ -36,7 +38,7 @@ export default class Field {
     }
 
     AlternativeClick() {
-        if (settings.swapControls)
+        if (config.swapControls)
             this.reveal()
         else if (this.revealed)
             this.flagedReveal()
@@ -76,6 +78,7 @@ export default class Field {
         this.flaged = !this.flaged
         this.flaged ? this.htmlElement.classList.add("flag") : this.htmlElement.classList.remove("flag")
         this.htmlElement.innerHTML = this.flaged ? '<i class="fas fa-flag"></i>' : this.bombsAround
+        updateUiBombs(settings.mines - fields.filter(e => e.flaged).length)
     }
 
     placeBomb() {

@@ -9,16 +9,24 @@
 
     <script src="https://kit.fontawesome.com/16ec65751d.js" crossorigin="anonymous"></script>
     <script type="module" src="../js/game/game.js" defer></script>
+    <script type="module" src="../js/game/ui.js" defer></script>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="game">
 
-    <div class="" id="game-board"></div>
+    <div id="game-board"></div>
+    
+    <div class="game-ui">
+        <div id="game-ui-bombs"><!--SCRIPT--></div>
+        <div id="game-ui-time"><!--SCRIPT--></div>
+        <div id="game-ui-controls"><!--SCRIPT--></div>
+    </div>
 
     <div class="game-end-bg" style="display:none;">
         <div class="game-end-container">
                 <div class="game-end-state"><!--SCRIPT--></div>
                 <div class="game-end-time"><!--SCRIPT--></div>
+                <div class="game-end-bombs"><!--SCRIPT--></div>
                 <div class="game-end-btns">
                     <div id="game-again-btn" class="game-btn"><i class="fas fa-play"></i> Play again</div>
                     <div id="game-back-btn" class="game-btn">Back to home <i class="fas fa-home"></i></div>
