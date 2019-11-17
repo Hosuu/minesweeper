@@ -50,7 +50,7 @@ export default function endGame(won) {
 }
 
 
-againBtn.addEventListener("click", () => window.location.reload())
+againBtn.addEventListener("click", () => window.location.search = '')
 homeBtn.addEventListener("click", () => window.location.replace('../index.html'))
 shareBtn.addEventListener("click", () => share())
 

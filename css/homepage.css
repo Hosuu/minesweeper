@@ -82,6 +82,11 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+input[type=number] {
+    -moz-appearance:textfield;
+    user-select: text;
+}
+
 
 #home-mods-btn{
     animation: appear .75s ease both 1.5s;
