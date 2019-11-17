@@ -1,0 +1,99 @@
+/** Google fonts **/
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap');
+/** Animations **/
+@import url('animations.css');
+/** Homepage styles **/
+@import url('homepage.css');
+/** Game styles **/
+@import url('game.css');
+
+
+/** mini-reset css **/
+*,*::before,*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root{
+
+    --version: 'v0.9';
+    --date: ' 17-11-2019';
+
+    /** Main colors **/
+    --background-color: #1A1D1E;
+    --main-text-color:  #ffffff;
+    --selection-color:  #06C995;
+
+    /** Difficulty colors **/
+    --easy:             #06C995;
+    --normal:           #EFC45F;
+    --hard:             #E24469;
+    --insane:           #000000;
+    --insane-text-color:#FF0000;
+
+    /** Fields **/
+    --fields-gap: 15px;
+
+    /** Field colors **/
+    --unrevealed:       #7B7E7F;
+    --revealed:         #629bb6;
+    --flaged:           #c5874d;
+    --bomb:             #9e4343;
+
+    /** Menu colors **/
+    --mods:             #d1764c;
+    --play:             #3f95bd;
+    --stats:            #bb54a5;
+    --how-to-play:      #52489C;
+    --error-text-color: #E24469;
+    --cover-text-color: #7a7a7a;
+    --modal-background: #1A1D1E;
+    --modal-border:     #0c0d0e;
+    --modal-list-hover: #0f1111;
+    --modal-hover-label:#9c9c9c;
+
+    /** Menu **/
+    --home-btn-shadow: 0 0 35px;
+
+}
+
+/** User selection **/
+::selection{
+    background: #06C995;
+}
+
+/** Hide arrows in number inputs **/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    /** Globaly centred flex on body **/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    /** Gbloal main settings **/
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+
+    /** Gbloal smooth scrolling **/
+    -webkit-overflow-scrolling: touch;
+    
+}
+/** Gblbal cool scrollbar **/
+::-webkit-scrollbar {width: 7px; height: 0;}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.45);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {background: rgba(0,0,0,0.55)}
+
+

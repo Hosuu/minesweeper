@@ -1,0 +1,269 @@
+.home-title{
+    font-size: 6rem;
+    font-weight: 600;
+
+    position: relative;
+
+    animation: appear .75s ease both 0s;
+}
+/** By Hosuu **/
+.home-title > p{
+    position: absolute;
+    top: 85%;
+    right: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+/** By Hosuu link **/
+.home-title > p > a{
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+.home-diffs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    max-width: 700px;
+}
+
+.home-diffs > div:nth-child(1){ animation: appear .50s ease both .5s; }     /** Easy **/
+.home-diffs > div:nth-child(2){ animation: appear .50s ease both .75s; }    /** Nomral **/
+.home-diffs > div:nth-child(3){ animation: appear .50s ease both 1s; }      /** Hard **/
+.home-diffs > div:nth-child(4){ /** Insane **/
+    animation: appear .50s ease both 1.25s; 
+    flex-basis: 50%; 
+    margin-top: 35px; 
+    font-weight: 700; 
+} .home-diffs > div:nth-child(4)::after{ color:var(--insane-text-color) }
+
+
+
+.home-settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 240px;
+    font-weight: 500;
+    font-size: 2rem;
+    animation: appear .75s ease both 1.5s;
+}
+
+.home-settings-error{
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--error-text-color);
+    opacity: 0;
+}
+.home-settings-cover{
+    font-size: 1rem;
+    color: var(--cover-text-color);
+}
+.home-settings svg{
+    width: 60px!important;
+}
+.home-settings input{
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+    width: 75px;
+    text-align: center;
+    outline: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+#home-mods-btn{
+    animation: appear .75s ease both 1.5s;
+}
+
+
+#home-play-btn{
+    margin: 15px 0;
+    font-size: 2.4em;
+    font-weight: 700;
+
+    animation: appear .75s ease both 1.75s;
+}
+
+#home-stats-btn{
+    animation: appear .75s ease both 2s;
+    margin-bottom: 10px;
+}
+
+#home-how-to-play-btn{
+    margin-bottom: 10px;
+
+    animation: appear .75s ease both 2.25s;
+}
+
+
+.version{
+    position: fixed;
+    left: 5px;
+    bottom: 0;
+    font-weight: 500;
+}
+.version::before{content: var(--version) }
+.version:hover::before{content: '' }
+.version:hover::after{ content: var(--date) }
+
+/*? Modals section ?*/
+.home-modal-bg{
+    position: fixed;
+    top:0; bottom: 0;
+    left:0; right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+
+    transform: translateX(-300vw);
+
+    
+}
+.home-modal-container{
+    background: var(--modal-background);
+    border: 5px solid var(--modal-border);
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    border-radius: 25px;
+    padding-bottom: 15px;
+    overflow-y: auto;
+}
+
+.home-modal-inner{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-modal-label{
+    font-size: 3em;
+    font-weight: 700;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.home-modal-content{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.home-modal-list{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    padding: .5em 2em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home-modal-list[label]:hover::after{
+    content: attr(label);
+    position: absolute;
+    left: 50%; bottom: 100%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--modal-list-hover);
+    color: var(--modal-hover-label);
+    height: 25px;
+    padding: 0 30px;
+    border-radius: 20px 20px 0 0;
+    font-size: 1rem;
+}
+
+.home-modal-list:hover{
+    background: var(--modal-list-hover);
+}
+
+
+/*? Buttons section ?*/
+.home-btn{
+    position: relative;
+    display: flex;
+    font-size: 10rem;
+    font-size: 2em;
+    font-weight: 500;
+    padding: .3em 1em;
+    border-radius: 15px;
+    color: transparent;
+}
+
+/** Button befeore and after to optimize glow animation **/
+.home-btn::before{
+    content: '';
+    position: absolute;
+    top: 5px; bottom: 5px;
+    left: 5px; right: 5px;
+    filter: blur(10px);
+
+    transition: opacity .3s ease, transform .3s ease;
+    transform-origin: 50% 100%;
+    opacity: 0;
+}
+.home-btn:hover::before{opacity: 1; }
+
+.home-btn::after{
+    content: attr(btn-label);
+    position: absolute;
+    top: 0; bottom: 0;
+    left:0; right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    color: var(--main-text-color);
+
+    transition: transform .3s ease;
+    transform-origin: 50% 100%;
+}
+
+.home-btn:hover::after,.home-btn:hover::before{
+    transform: scale(1.2) translateY(-10px);
+}
+
+.home-small-btn{
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: .3em 1.3em;
+    cursor: pointer;
+}
+
+/** select single Button and set right color **/
+#home-easy-btn::before{box-shadow: var(--home-btn-shadow) var(--easy);}
+#home-easy-btn::after{background: var(--easy);}
+
+#home-normal-btn::before{box-shadow: var(--home-btn-shadow) var(--normal);}
+#home-normal-btn::after{background: var(--normal);}
+
+#home-hard-btn::before{box-shadow: var(--home-btn-shadow) var(--hard);}
+#home-hard-btn::after{background: var(--hard);}
+
+#home-insane-btn::before{box-shadow: var(--home-btn-shadow) var(--insane);}
+#home-insane-btn::after{background: var(--insane);}
+
+#home-play-btn::before{box-shadow: var(--home-btn-shadow) var(--play);}
+#home-play-btn::after{background: var(--play);}
+
+#home-mods-btn{background: var(--mods);}
+
+#home-stats-btn{background: var(--stats);}
+
+#home-how-to-play-btn{background: var(--how-to-play);}

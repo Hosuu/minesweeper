@@ -1,0 +1,87 @@
+.game{ display: block }
+
+#game-board {
+    display: grid;
+    gap: var(--fields-gap)
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: var(--unrevealed);
+
+    font-size: 2em;
+    font-weight: 700;
+    color: transparent;
+}
+.field:hover { filter: brightness(1.2) }
+
+.revealed, .flag, .bomb{ color: var(--main-text-color) }
+.revealed{ background: var(--revealed) }
+.flag{ background: var(--flaged) }
+.bomb{ background: var(--bomb) }
+
+.game-end-bg {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    justify-content: center;
+    align-items: center;
+    animation: endGame .75s ease forwards .5s;
+}
+
+.game-end-container {
+    width: 100%;
+    max-width: 400px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+}
+
+.game-end-state {
+    font-size: 5em;
+    animation: appear-top .5s ease both 1s;
+}
+
+.game-end-time {
+    font-size: 1.5em;
+    font-weight: 400;
+    animation: appear .5s ease both 1.5s;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.game-end-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.game-btn {
+    flex: 1;
+    margin: 10px;
+    padding: 1em;
+    border-radius: 20px;
+    background: #000;
+    text-align: center;
+    filter: brightness(0.6);
+}
+.game-btn:nth-child(1) { animation: scale-in .75s ease both 1.65s }
+.game-btn:nth-child(2) { animation: scale-in .75s ease both 1.65s }
+.game-btn:nth-child(3) { animation: scale-in .75s ease both 1.8s; flex-basis: 100%; }
+.game-btn:hover { filter: brightness(1) }
+
+#game-share-text{
+    position: fixed;
+    left:0;
+    transform: translateX(-100vw);   
+}
