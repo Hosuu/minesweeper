@@ -1,9 +1,12 @@
-import { startDate } from './game.js'
+import { startDate, gameBoard, fields } from './game.js'
 import { settings, seed } from './settings.js'
 
 const endGameScreen = document.querySelector('.game-end-bg')
 const endGameState = document.querySelector('.game-end-state')
 const endGameTime = document.querySelector('.game-end-time')
+const endGameBombs = document.querySelector('.game-end-bombs')
+
+const gameUi = document.querySelector('.game-ui')
 
 const againBtn = document.querySelector('#game-again-btn')
 const homeBtn = document.querySelector('#game-back-btn')
@@ -15,15 +18,17 @@ shareText.value = `${window.location.origin + window.location.pathname}?settings
 
 export default function endGame(won) {
     won ? endGameState.innerHTML = "You Won" : endGameState.innerHTML = "You Lost"
-
     const timeStamp = Date.now()
     const timeSpent = timeStamp - startDate
+    gameBoard.classList.add('game-ended')
+    gameUi.classList.add('game-ended')
 
     //** Update game stats **//
     const stats = window.localStorage.getItem('stats') ? JSON.parse(window.localStorage.getItem('stats')) : {}
     stats.playtime = stats.playtime ? stats.playtime + timeSpent : timeSpent
     stats.playcount = stats.playcount ? stats.playcount + 1 : 1
     won ? stats.won ? stats.won++ : stats.won = 1 : stats.lost ? stats.lost++ : stats.lost = 1
+
     //** If won nomral flag it to unlock hard diff **//
     if (settings.rows == 15 && settings.cols == 15 && settings.mines == 35 && won && !stats.normalbeaten) {
         stats.normalbeaten = true
@@ -45,6 +50,8 @@ export default function endGame(won) {
     let seconds = ('0' + parseInt(timeSpent / 1000 % 60)).slice(-2)
     let miliseconds = ('0' + parseInt(timeSpent / 10 % 100)).slice(-2)
     endGameTime.innerHTML = `<i class="fas fa-stopwatch" style="width: 40px"></i>   ${minutes}:${seconds}.${miliseconds}`
+    //** Calc Bombs left **//
+    endGameBombs.innerHTML = `<i class="fas fa-bomb" style="width: 40px"></i> ${fields.filter(e => e.bomb && !e.flaged).length} left`
 
     endGameScreen.style.display = "flex"
 }

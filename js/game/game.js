@@ -1,15 +1,17 @@
+export const startDate = Date.now()
+updateUiTimer()
+export const fields = new Array()
+
 //** Import Field class **//
 import Field from './field.js'
 import endGame from './endgame.js'
 import { settings } from './settings.js'
 import { random } from './random.js'
+import { updateUiBombs, updateUiTimer } from './ui.js'
 
-export const startDate = Date.now()
-
-const gameBoard = document.querySelector('#game-board')
+export const gameBoard = document.querySelector('#game-board')
 
 //** Generate board **//
-export const fields = new Array()
 for (let y = 0; y < settings.rows; y++) {
     for (let x = 0; x < settings.cols; x++) {
         let field = document.createElement('div')
@@ -77,3 +79,5 @@ fields.find(f => f.bombsAround == 0 && f.neighbors.length == 8).reveal()
 
 //** Block context menu on whole page **//
 document.body.addEventListener('contextmenu', e => e.preventDefault())
+
+updateUiBombs(settings.mines - fields.filter(e => e.flaged).length)

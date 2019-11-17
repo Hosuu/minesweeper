@@ -1,8 +1,40 @@
-.game{ display: block }
+.game{
+    display: block;
+}
 
 #game-board {
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
-    gap: var(--fields-gap)
+    gap: var(--fields-gap);
+    margin-top: 75px;
+    margin-bottom: 10vh;
+}
+#game-board.game-ended{
+    filter: blur(5px);
+    transition: filter 2s linear;
+}
+
+.game-ui{
+    position: fixed;
+    top: 0px;
+    left: 0;right: 0;
+    height: 50px;
+    display: flex;
+    font-size: 1.5em;
+    font-weight: 600;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background-color);
+}
+.game-ui > div{
+    flex-basis: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+.game-ui.game-ended{
+    transform: translateY(-75px);
+    transition: transform 1.5s ease;
 }
 
 .field {
@@ -38,7 +70,7 @@
 .game-end-container {
     width: 100%;
     max-width: 400px;
-    height: 320px;
+    height: 340px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -56,6 +88,16 @@
     font-weight: 400;
     animation: appear .5s ease both 1.5s;
     flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.game-end-bombs{
+    font-size: 1.3em;
+    font-weight: 600;
+    animation: appear .5s ease both 1.6s;
+    flex: 1;
+    color: #ddd;
     display: flex;
     align-items: center;
 }
