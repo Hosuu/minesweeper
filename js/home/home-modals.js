@@ -42,7 +42,8 @@ const showModal = window => {
 }
 
 const hideModal = (e) => {
-    if (e.path[0] != modalBg) return
+    const path = e.path || (e.composedPath && e.composedPath()) || composedPath(e.target);
+    if (path[0] != modalBg) return
     modalBg.style.animation = "hide-modal-bg .45s ease both .1s"
     modalContainer.style.animation = "disappear-modal .55s ease both"
 }
