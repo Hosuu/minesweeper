@@ -4,15 +4,18 @@ const modalContainer = document.querySelector('.home-modal-container')
 const modsInner = document.querySelector('#home-mods-inner')
 const howInner = document.querySelector('#home-how-to-play-inner')
 const statsInner = document.querySelector('#home-stats-inner')
+const configInner = document.querySelector('#home-config-inner')
 
 const modsBtn = document.querySelector('#home-mods-btn')
 const howBtn = document.querySelector('#home-how-to-play-btn')
 const statsBtn = document.querySelector('#home-stats-btn')
+const configBtn = document.querySelector('#home-config-btn')
 
 modalBg.addEventListener('click', e => hideModal(e))
 modsBtn.addEventListener('click', () => showModal('mods'))
 howBtn.addEventListener('click', () => showModal('how'))
 statsBtn.addEventListener('click', () => showModal('stats'))
+configBtn.addEventListener('click', () => showModal('config'))
 
 const showModal = window => {
 
@@ -24,18 +27,31 @@ const showModal = window => {
             modsInner.style.display = "flex"
             howInner.style.display = "none"
             statsInner.style.display = "none"
+            configInner.style.display = "none"
             break;
 
         case 'how':
             modsInner.style.display = "none"
             howInner.style.display = "flex"
             statsInner.style.display = "none"
+            configInner.style.display = "none"
+
             break;
 
         case 'stats':
             modsInner.style.display = "none"
             howInner.style.display = "none"
             statsInner.style.display = "flex"
+            configInner.style.display = "none"
+
+            break;
+
+        case 'config':
+            modsInner.style.display = "none"
+            howInner.style.display = "none"
+            statsInner.style.display = "none"
+            configInner.style.display = "flex"
+
             break;
     }
 

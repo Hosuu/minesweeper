@@ -67,6 +67,7 @@ export const winCheck = () => {
     let bombs = fields.filter(f => f.bomb == true)
     bombs.forEach(f => {
         f.revealed = true
+        f.flaged = true
         f.htmlElement.classList.add("flag")
         f.htmlElement.innerHTML = '<i class="fas fa-flag"></i>'
     })
@@ -75,7 +76,8 @@ export const winCheck = () => {
 }
 
 //** Reveal first empty tile **//
-fields.find(f => f.bombsAround == 0 && f.neighbors.length == 8).reveal()
+if (settings.luckyStart)
+    fields.find(f => f.bombsAround == 0 && f.neighbors.length == 8).reveal()
 
 //** Block context menu on whole page **//
 document.body.addEventListener('contextmenu', e => e.preventDefault())
