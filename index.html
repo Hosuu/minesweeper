@@ -32,35 +32,55 @@
     <div class="home-settings">
         <div class="home-settings-label">Customize settings:</div>
         <div class="home-settings-error">Specify value in range 2-150</div>
-        <div class="home-settings-rows"><label for="rows"><i class="fas fa-arrows-alt-v"></i></label> <input type="number" id="rows"></div>
-        <div class="home-settings-cols"><label for="cols"><i class="fas fa-arrows-alt-h"></i></label> <input type="number" id="cols"></div>
-        <div class="home-settings-mines"><label for="mines"><i class="fas fa-bomb"></i></label> <input type="number" id="mines"></div>
+        <div class="home-settings-rows"><label for="rows"><i class="fas fa-arrows-alt-v static-svg"></i></label> <input type="number" id="rows"></div>
+        <div class="home-settings-cols"><label for="cols"><i class="fas fa-arrows-alt-h static-svg"></i></label> <input type="number" id="cols"></div>
+        <div class="home-settings-mines"><label for="mines"><i class="fas fa-bomb static-svg"></i></label> <input type="number" id="mines"></div>
         <div class="home-settings-cover">Bombs cover: <span id="bombCover"></span>%</div>
+        <div class="home-small-btn" id="home-mods-btn"><i class="fas fa-cogs"></i> Mods</div>
     </div>
     
-    <div class="home-small-btn" id="home-mods-btn"><i class="fas fa-cogs"></i> Mods</div>
     <div class="home-btn" id="home-play-btn" btn-label="Start Game">Start Game</div>
-    <div class="home-small-btn" id="home-stats-btn">Stats</div>
-    <div class="home-small-btn" id="home-how-to-play-btn">How to play?</div>
+    <div class="home-small-btns">
+        <div class="home-small-btn" id="home-stats-btn"><i class="fas fa-clipboard-list"></i> Stats</div>
+        <div class="home-small-btn" id="home-how-to-play-btn">How to play?</div>
+        <div class="home-small-btn" id="home-config-btn"><i class="fas fa-wrench"></i> Config</div>
+    </div>
 
     <!--* Modal windows *-->
     <div class="home-modal-bg">
         <div class="home-modal-container">
+
+
             <!--* MODS MODAL *-->
             <div class="home-modal-inner" id="home-mods-inner">
-                <div class="home-modal-label">Mods</div>
-                <div class="home-modal-content">Coming soon!</div>
+                <div class="home-modal-label"><i class="fas fa-cogs"></i> Mods</div>
+                <div class="home-modal-list" label="Reveals first empty field at the beginning">
+                    <div>Lucky start</div>
+                    <div class="checkbox" id="home-mods-lucky-start"><!--SCRIPT--></div>
+                </div>
             </div>
             <!--! MODS MODAL !-->
+
+
             <!--* How to play MODAL *-->
             <div class="home-modal-inner" id="home-how-to-play-inner">
                 <div class="home-modal-label">How to play?</div>
                 <div class="home-modal-content">Coming soon!</div>
             </div>
-            <!--! how to play MODAL !-->
+            <!--! How to play MODAL !-->
+
+
+            <!--* Config MODAL *-->
+            <div class="home-modal-inner" id="home-config-inner">
+                <div class="home-modal-label"><i class="fas fa-wrench"></i> Config</div>
+                <div class="home-modal-content">Coming soon!</div>
+            </div>
+            <!--! Config MODAL !-->
+
+
             <!--* STATS MODAL *-->
             <div class="home-modal-inner" id="home-stats-inner">
-                <div class="home-modal-label">Stats</div>
+                <div class="home-modal-label"><i class="fas fa-clipboard-list"></i> Stats</div>
                 <div class="home-modal-list" label="Time spent in game">
                     <div>Play time</div>
                     <div id="home-stats-playtime">00:35:23</div>

@@ -51,7 +51,7 @@ export default function endGame(won) {
     let miliseconds = ('0' + parseInt(timeSpent / 10 % 100)).slice(-2)
     endGameTime.innerHTML = `<i class="fas fa-stopwatch" style="width: 40px"></i>   ${minutes}:${seconds}.${miliseconds}`
     //** Calc Bombs left **//
-    endGameBombs.innerHTML = `<i class="fas fa-bomb" style="width: 40px"></i> ${fields.filter(e => e.bomb && !e.flaged).length} left`
+    endGameBombs.innerHTML = won ? '' : `<i class="fas fa-bomb" style="width: 40px"></i> ${fields.filter(e => e.bomb && !e.flaged).length} left`
 
     endGameScreen.style.display = "flex"
 }
@@ -69,4 +69,6 @@ const share = () => {
     shareText.setSelectionRange(0, 99999);
 
     document.execCommand("copy");
+
+    shareText.blur()
 }

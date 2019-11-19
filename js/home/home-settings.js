@@ -5,6 +5,8 @@ const normalDiff = document.querySelector('#home-normal-btn')
 const hardDiff = document.querySelector('#home-hard-btn')
 const insaneDiff = document.querySelector('#home-insane-btn')
 
+const luckyStart = document.querySelector('#home-mods-lucky-start')
+
 //** Calc Bomb ratio **// 
 inputs.forEach(i => i.oninput = () => calcBombRatio())
 
@@ -21,6 +23,8 @@ minesDiv.addEventListener('animationend', e => e.target.style.animation = "null"
 
 const errorDiv = document.querySelector('.home-settings-error')
 errorDiv.addEventListener('animationend', e => e.target.style.animation = "null")
+
+luckyStart.addEventListener('animationend', e => e.target.style.animation = "null")
 
 //?? Difficulty buttons ??//
 //** Easy **// 
@@ -84,3 +88,12 @@ const settingsCheck = () => {
 
     return true
 }
+
+luckyStart.addEventListener('click', e => {
+    e.preventDefault()
+    luckyStart.style.animation = 'checkbox .2s ease'
+    settings.luckyStart = !settings.luckyStart
+
+    luckyStart.innerHTML = settings.luckyStart ? '<i class="fas fa-check-square"></i>' : '<i class="far fa-square"></i>'
+})
+luckyStart.innerHTML = settings.luckyStart ? '<i class="fas fa-check-square"></i>' : '<i class="far fa-square"></i>'

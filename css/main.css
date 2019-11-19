@@ -18,8 +18,8 @@
 
 :root{
 
-    --version: 'v0.9.2';
-    --date: ' 17-11-2019';
+    --version: 'v0.9.3';
+    --date: ' 19-11-2019';
 
     /** Main colors **/
     --background-color: #1A1D1E;
@@ -41,12 +41,22 @@
     --revealed:         #629bb6;
     --flaged:           #c5874d;
     --bomb:             #9e4343;
+    --special-field:    #ffffff;
+    --field-num-1:      #ffffff;
+    --field-num-2:      #ffffff;
+    --field-num-3:      #ffffff;
+    --field-num-4:      #ffffff;
+    --field-num-5:      #ffffff;
+    --field-num-6:      #ffffff;
+    --field-num-7:      #ffffff;
+    --field-num-8:      #ffffff;
 
     /** Menu colors **/
     --mods:             #d1764c;
     --play:             #3f95bd;
     --stats:            #bb54a5;
     --how-to-play:      #52489C;
+    --config:           #088888;
     --error-text-color: #E24469;
     --cover-text-color: #7a7a7a;
     --modal-background: #1A1D1E;
@@ -74,6 +84,8 @@ input::-webkit-inner-spin-button {
 body{
     /** Globaly centred flex on body **/
     display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;

@@ -106,6 +106,8 @@ export default class Field {
         this.bombsAround = this.neighbors.reduce((total, f) => total + f.bomb, 0)
 
         this.htmlElement.innerHTML = this.bombsAround > 0 ? this.bombsAround : ""
+        if (this.bombsAround > 0)
+            this.htmlElement.classList.add(`num${this.bombsAround}`)
     }
 }
 

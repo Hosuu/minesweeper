@@ -1,10 +1,16 @@
+.game{
+    min-height: 0;
+    min-width: 0;
+}
+
 #game-board {
-    margin-left: auto;
-    margin-right: auto;
     display: grid;
     gap: var(--fields-gap);
-    margin-top: 75px;
+    min-height: calc(90vh - 50px);
+    width: fit-content;
     margin-bottom: 10vh;
+    align-content: center;
+    margin: 50px auto;
 }
 #game-board.game-ended{
     filter: blur(5px);
@@ -49,10 +55,20 @@
 }
 .field:hover { filter: brightness(1.2) }
 
-.revealed, .flag, .bomb{ color: var(--main-text-color) }
+.flag, .bomb{ color: var(--special-field) }
 .revealed{ background: var(--revealed) }
 .flag{ background: var(--flaged) }
 .bomb{ background: var(--bomb) }
+
+/** Field Number colrs **/
+.revealed:not(.flag):not(.bomb).num1{ color: var(--field-num-1) }
+.revealed:not(.flag):not(.bomb).num2{ color: var(--field-num-2) }
+.revealed:not(.flag):not(.bomb).num3{ color: var(--field-num-3) }
+.revealed:not(.flag):not(.bomb).num4{ color: var(--field-num-4) }
+.revealed:not(.flag):not(.bomb).num5{ color: var(--field-num-5) }
+.revealed:not(.flag):not(.bomb).num6{ color: var(--field-num-6) }
+.revealed:not(.flag):not(.bomb).num7{ color: var(--field-num-7) }
+.revealed:not(.flag):not(.bomb).num8{ color: var(--field-num-8) }
 
 .game-end-bg {
     position: fixed;

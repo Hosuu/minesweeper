@@ -46,6 +46,18 @@
     }
 }
 
+@keyframes checkbox{
+    from {
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.4);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 @keyframes appear-modal {
     from {
         opacity: 0;
