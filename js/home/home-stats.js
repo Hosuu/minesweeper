@@ -17,7 +17,7 @@ const wonDiv = document.querySelector('#home-stats-won')
 const lostDiv = document.querySelector('#home-stats-lost')
 const winrateDiv = document.querySelector('#home-stats-winrate')
 
-playtimeDiv.innerHTML = `${('0' + hours).slice(-2)}:${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
+playtimeDiv.innerHTML = `${'0' + hours}:${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
 playcountDiv.innerHTML = stats.playcount ? Number(stats.playcount) : 0
 wonDiv.innerHTML = stats.won ? Number(stats.won) : 0
 lostDiv.innerHTML = stats.lost ? Number(stats.lost) : 0
