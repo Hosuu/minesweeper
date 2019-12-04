@@ -2,110 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>minesweeper</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.1/ScrollToPlugin.min.js"></script>
+    <script src="/js/home.js" defer type="module"></script>
 
-    <script src="https://kit.fontawesome.com/16ec65751d.js" crossorigin="anonymous"></script>
+    <title>Minesweeper by hosuu</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/home/home.js" defer></script>
-    <script src="js/home/home-settings.js" defer></script>
-    <script src="js/home/home-modals.js" defer></script>
-    <script src="js/home/home-stats.js" defer></script>
+
+    <link rel="manifest" href="manifest.json">
 
 </head>
 <body>
-    <div class="home-title">
-        <i class="fas fa-bomb"></i> MineSweeper
-        <p>by <a href="https://github.com/Hosuu/minesweeper">Hosuu</i></a></p>
-    </div>
-
-    <div class="home-diffs">
-        <div class="home-btn" id="home-easy-btn" btn-label="Easy">Easy</div>
-        <div class="home-btn" id="home-normal-btn" btn-label="Normal">Normal</div>
-        <div class="home-btn" id="home-hard-btn" btn-label="Hard">Hard</div>
-        <div class="home-btn" id="home-insane-btn" btn-label="⛧ Insane ⛧">Insane</div>
-    </div>
-
-    <div class="home-settings">
-        <div class="home-settings-label">Customize settings:</div>
-        <div class="home-settings-error">Specify value in range 2-150</div>
-        <div class="home-settings-rows"><label for="rows"><i class="fas fa-arrows-alt-v static-svg"></i></label> <input type="number" id="rows"></div>
-        <div class="home-settings-cols"><label for="cols"><i class="fas fa-arrows-alt-h static-svg"></i></label> <input type="number" id="cols"></div>
-        <div class="home-settings-mines"><label for="mines"><i class="fas fa-bomb static-svg"></i></label> <input type="number" id="mines"></div>
-        <div class="home-settings-cover">Bombs cover: <span id="bombCover"></span>%</div>
-        <div class="home-small-btn" id="home-mods-btn"><i class="fas fa-cogs"></i> Mods</div>
-    </div>
-    
-    <div class="home-btn" id="home-play-btn" btn-label="Start Game">Start Game</div>
-    <div class="home-small-btns">
-        <div class="home-small-btn" id="home-stats-btn"><i class="fas fa-clipboard-list"></i> Stats</div>
-        <div class="home-small-btn" id="home-how-to-play-btn">How to play?</div>
-        <div class="home-small-btn" id="home-config-btn"><i class="fas fa-wrench"></i> Config</div>
-    </div>
-
-    <!--* Modal windows *-->
-    <div class="home-modal-bg">
-        <div class="home-modal-container">
-
-
-            <!--* MODS MODAL *-->
-            <div class="home-modal-inner" id="home-mods-inner">
-                <div class="home-modal-label"><i class="fas fa-cogs"></i> Mods</div>
-                <div class="home-modal-list" label="Reveals first empty field at the beginning">
-                    <div>Lucky start</div>
-                    <div class="checkbox" id="home-mods-lucky-start"><!--SCRIPT--></div>
-                </div>
-            </div>
-            <!--! MODS MODAL !-->
-
-
-            <!--* How to play MODAL *-->
-            <div class="home-modal-inner" id="home-how-to-play-inner">
-                <div class="home-modal-label">How to play?</div>
-                <div class="home-modal-content">Coming soon!</div>
-            </div>
-            <!--! How to play MODAL !-->
-
-
-            <!--* Config MODAL *-->
-            <div class="home-modal-inner" id="home-config-inner">
-                <div class="home-modal-label"><i class="fas fa-wrench"></i> Config</div>
-                <div class="home-modal-content">Coming soon!</div>
-            </div>
-            <!--! Config MODAL !-->
-
-
-            <!--* STATS MODAL *-->
-            <div class="home-modal-inner" id="home-stats-inner">
-                <div class="home-modal-label"><i class="fas fa-clipboard-list"></i> Stats</div>
-                <div class="home-modal-list" label="Time spent in game">
-                    <div>Play time</div>
-                    <div id="home-stats-playtime">00:35:23</div>
-                </div>
-                <div class="home-modal-list" label="Number of played games">
-                    <div>Play count</div>
-                    <div id="home-stats-playcount">14</div>
-                </div>
-                <div class="home-modal-list" label="Number of Won games">
-                    <div>Win</div>
-                    <div id="home-stats-won">4</div>
-                </div>
-                <div class="home-modal-list" label="Number of Lost games">
-                    <div>Lost</div>
-                    <div id="home-stats-lost">10</div>
-                </div>
-                <div class="home-modal-list" label="Won games ratio">
-                    <div>Win rate</div>
-                    <div id="home-stats-winrate">28%</div>
-                </div>
-            </div>
-            <!--! STATS MODAL !-->
+    <section class="home-section" id="home-landing">
+        <div class="home-title"></div>
+        <div class="home-diffs">
+            <div class="home-tile" cta="easy" id="easy-diff">Easy</div>
+            <div class="home-tile" cta="normal" id="normal-diff">Normal</div>
+            <div class="home-tile" cta="hard" id="hard-diff">Hard</div>
+            <div class="home-tile" cta="insane" id="insane-diff">Insane</div>
         </div>
-    </div>
-
-    <div class="version"><!--CSS--></div>
+        <div class="home-tile" cta="mods" id="mods-btn"></div>
+        <div class="home-tile" cta="start" id="start-btn">Start Game</div>
+    </section>
+    <div class="home-menu-btn" cta="toggle-menu"></div>
+    <section class="home-section" id="home-menu">
+        <!-- <div class="home-tile" cta="wheel" id="wheel-btn">Wheel</div>
+        <div class="home-tile" cta="shop" id="shop-btn">Shop</div> -->
+        <div class="home-tile" cta="htp" id="htp-btn">How to play</div>
+        <div class="home-tile" cta="stats" id="stats-btn">Stats</div>
+        <div class="home-tile" cta="config" id="config-btn">Config</div>
+        <div id="home-version">DEV BUILD</div>
+    </section>
 </body>
 </html>

@@ -5,9 +5,12 @@ export const fields = new Array()
 //** Import Field class **//
 import Field from './field.js'
 import endGame from './endgame.js'
-import { settings } from './settings.js'
-import { random } from './random.js'
+import Settings from '../Settings.js'
+import Randomizer from '../Randomizer.js'
 import { updateUiBombs, updateUiTimer } from './ui.js'
+
+export const settings = new Settings()
+const randomizer = new Randomizer(settings.seed)
 
 export const gameBoard = document.querySelector('#game-board')
 
@@ -28,7 +31,7 @@ gameBoard.style.gridTemplateRows = `repeat(${settings.rows}, 45px)`
 //** spawn bombs **//
 let bombsToPlace = settings.mines
 while (bombsToPlace > 0) {
-    let id = Math.floor(random() * fields.length)
+    let id = Math.floor(randomizer.random() * fields.length)
     if (!fields[id].bomb) {
         fields[id].placeBomb()
         bombsToPlace--

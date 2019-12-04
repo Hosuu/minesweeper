@@ -1,0 +1,207 @@
+.home{
+    position: fixed
+}
+.home-section{
+    position: relative;
+    height: calc(100vh - 80px);
+    width: calc(100vw - 25px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+}
+
+.home-title{
+    width: 100%;
+    height: 75px;
+    background: url('../img/icons/logo.svg') no-repeat center;
+    background-size: contain;
+}
+
+.--pressed{
+    zoom: 2;
+}
+
+.home-diffs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.home-diffs > .home-tile{
+    flex-basis: 40%;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.home-tile{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: no-repeat 50% 15%;
+    
+    border-radius: 25px;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 150%;
+    color: var(--main-text-color);
+    text-shadow: var(--main-text-shadow);
+    white-space: nowrap;
+}
+
+.home-menu-btn{
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url('../img/icons/menu-icon.svg') no-repeat 50% 50%;  
+}
+
+#mods-btn{
+    border-radius: 100%;
+    background-position: center;
+    background-size: 70%;
+    width: 96px;
+    height: 96px;
+}
+#start-btn{
+    font-size: 48px;
+    line-height: 100%;
+    align-items: center;
+}
+
+#home-menu > #config-btn{
+    margin-bottom: 24px;
+}
+
+#home-version{
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+
+#easy-diff{ 
+    background-color: var(--easy-color); 
+    color:            var(--diff-text-color);
+    background-image: var(--easy-icon);
+}
+#normal-diff{ 
+    background-color: var(--normal-color); 
+    background-image: var(--normal-icon);
+    color:            var(--diff-text-color);
+}
+#hard-diff{ 
+    background-color: var(--hard-color); 
+    background-image: var(--hard-icon);
+    color:            var(--diff-text-color);
+}
+#insane-diff{ 
+    background-color: var(--insane-color); 
+    background-image: var(--insane-icon);
+    color:            var(--insane-text-color);
+}
+#mods-btn{ 
+    background-color: var(--mods-color); 
+    background-image: var(--mods-icon);
+    color:            var(--main-text-color);
+}
+#start-btn{ 
+    background-color: var(--start-color); 
+    background-image: var(--start-icon);
+    color:            var(--main-text-color);
+}
+#wheel-btn{ 
+    background-color: var(--wheel-color); 
+    background-image: var(--wheel-icon);
+    color:            var(--main-text-color);
+}
+#shop-btn{ 
+    background-color: var(--shop-color); 
+    background-image: var(--shop-icon);
+    color:            var(--main-text-color);
+}
+#htp-btn{ 
+    background-color: var(--htp-color); 
+    background-image: var(--htp-icon);
+    color:            var(--main-text-color);
+}
+#stats-btn{ 
+    background-color: var(--stats-color); 
+    background-image: var(--stats-icon);
+    color:            var(--main-text-color);
+}
+#config-btn{ 
+    background-color: var(--config-color); 
+    background-image: var(--config-icon);
+    color:            var(--main-text-color);
+}
+
+@media (min-width: 900px){
+
+    .home{
+        position: unset;
+        transform: translateY(0);
+    }
+
+    .home-diffs > .home-tile{
+        flex-basis: unset;
+        flex-grow: unset;
+        margin: 10px;
+        width: 200px;
+    }
+
+    .home-title{
+        height: 125px;
+    }
+
+    .home-tile{
+        width: 250px;
+        margin: 10px!important;
+    }
+
+    .home-section{
+        position: relative;
+        height: unset;
+        width: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #mods-btn{
+        width: 128px;
+        height: 128px;
+    }
+
+    #home-landing{
+        flex: 1;
+    }
+
+    #start-btn{
+        padding: 1em 4em;
+    }
+
+    #home-menu{
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 36px;
+    }
+
+    .home-menu-btn{
+        display: none;
+    }
+
+    #home-version{
+        position: fixed;
+    }
+}

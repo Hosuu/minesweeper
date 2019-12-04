@@ -3,7 +3,7 @@
 /** Animations **/
 @import url('animations.css');
 /** Homepage styles **/
-@import url('homepage.css');
+@import url('home.css');
 /** Game styles **/
 @import url('game.css');
 
@@ -24,14 +24,46 @@
     /** Main colors **/
     --background-color: #1A1D1E;
     --main-text-color:  #ffffff;
+    --main-text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
     --selection-color:  #06C995;
 
-    /** Difficulty colors **/
-    --easy:             #06C995;
-    --normal:           #EFC45F;
-    --hard:             #E24469;
-    --insane:           #000000;
-    --insane-text-color:#FF0000;
+    /** Difficulties **/
+    --easy-color:       #06C995;
+    --easy-icon:        url('../img/icons/easy-icon.svg');
+
+    --normal-color:     #EFC45F;
+    --normal-icon:      url('../img/icons/normal-icon.svg');
+
+    --hard-color:       #E24469;
+    --hard-icon:        url('../img/icons/hard-icon.svg');
+
+    --insane-color:     #4D254E;
+    --insane-icon:      url('../img/icons/insane-icon.svg');
+    
+    --diff-text-color:  #ffffff;
+    --insane-text-color:#D94949;
+
+    /** Menu buttons **/
+    --mods-color:       #BD7757;
+    --mods-icon:        url('../img/icons/mods-icon.svg');
+
+    --start-color:      #21C7BD;
+
+    --wheel-color:      #E2B50F;
+    /* --wheel-icon:       url('../img/icons/wheel-icon.svg'); */
+
+    --shop-color:       #E88B3C;
+    /* --shop-icon:        url('../img/icons/shop-icon.svg'); */
+
+    --htp-color:        #3C8DEA;
+    --htp-icon:         url('../img/icons/htp-icon.svg');
+
+    --stats-color:      #CE254C;
+    --stats-icon:       url('../img/icons/stats-icon.svg');
+
+    --config-color:     #7218F9;
+    --config-icon:      url('../img/icons/config-icon.svg');
+
 
     /** Fields **/
     --fields-gap: 15px;
@@ -94,20 +126,7 @@ body{
     background-color: var(--background-color);
     color: var(--main-text-color);
     font-family: 'Quicksand', sans-serif;
-    min-height: 100vh;
-
-    /** Gbloal smooth scrolling **/
-    -webkit-overflow-scrolling: touch;
-    
+    min-height: 100vh;    
 }
-/** Gblbal cool scrollbar **/
-::-webkit-scrollbar {width: 12px; height: 12px;}
-::-webkit-scrollbar-thumb {
-    background: #92929273;
-    border-radius: 12px;
-}
-::-webkit-scrollbar-thumb:hover {background: rgba(233, 233, 233, 0.55)}
-::-webkit-scrollbar-corner{
-    display: none;
-}
-
+/** Global scrollbar remover **/
+::-webkit-scrollbar {display: none;}

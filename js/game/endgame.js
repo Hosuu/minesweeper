@@ -1,5 +1,5 @@
 import { startDate, gameBoard, fields } from './game.js'
-import { settings, seed } from './settings.js'
+import { settings } from './settings.js'
 
 const endGameScreen = document.querySelector('.game-end-bg')
 const endGameState = document.querySelector('.game-end-state')
@@ -14,7 +14,7 @@ const shareBtn = document.querySelector('#game-share-btn')
 
 const shareText = document.querySelector('#game-share-text')
 //** Set settings to coppy with share Btn **//
-shareText.value = `${window.location.origin + window.location.pathname}?settings=${JSON.stringify(settings)}&seed=${seed}`
+shareText.value = `${window.location.origin + window.location.pathname}?settings=${JSON.stringify(settings)}&seed=${settings.seed}`
 
 export default function endGame(won) {
     won ? endGameState.innerHTML = "You Won" : endGameState.innerHTML = "You Lost"
